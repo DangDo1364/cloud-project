@@ -26,7 +26,7 @@ if(!empty($_POST))
             $_SESSION['USER'] = $username;
             unset($_SESSION['dangnhap']);
             header('Location: admin.php');
-        die();
+            die();
         }
     }
 }
