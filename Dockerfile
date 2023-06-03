@@ -1,6 +1,8 @@
 # Use an official PHP image as the base image
 FROM php:7.4-cli
 
+RUN docker-php-ext-install mysqli
+
 # Install necessary dependencies
 RUN apt-get update && apt-get install -y \
     git \
