@@ -15,18 +15,23 @@ if(!empty($_POST))
     if(!empty($username) && !empty($password))
     {
         $con = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
-        $sql = 'select * from taikhoan where username = "'.$username.'" and password = "'.$password.'" ';
-	$query = mysqli_query($con,$sql);
-	$num_rows = mysqli_num_rows($query);
-	if ($num_rows==0) 
+        if ($con -> connect_error) {
+            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+            exit();
+        }
+        $sql = 'SELECT * from taikhoan where username = '$username' and password = '$password'';
+	    $query = mysqli_query($con,$sql);
+        echo "Returned rows are: " . $query->num_rows;
+	    $num_rows = mysqli_num_rows($query);
+	    if ($num_rows==0) 
         {
             header('Location: login.php');
-            $_SESSION['dangnhap'] = 'Nhập sai gì rồi thằng ngu !';
+            $_SESSION['dangnhap'] = $password;
         }else{
             $_SESSION['USER'] = $username;
             unset($_SESSION['dangnhap']);
             header('Location: admin.php');
-            die();
+        die();
         }
     }
 }
