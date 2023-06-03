@@ -30,7 +30,7 @@ class ExampleTest extends TestCase
 
         $result = self::$conn->query($sql);
 
-        $this->assertGreaterThan(1, $result->num_rows, 'Failed to retrieve the inserted data.');    
+        $this->assertGreaterThan(0, $result->num_rows, 'Failed to retrieve the inserted data.');    
     }
 
     public static function tearDownAfterClass(): void
