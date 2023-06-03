@@ -19,14 +19,14 @@ class ExampleTest extends TestCase
     public function testInsertData()
     {
         // Test inserting data into a table
-        $sql = "INSERT INTO taikhoan (username, password) VALUES ('dangdo', '123456')";
+        $sql = "INSERT INTO taikhoan (username, password) VALUES ('dangdo1', '123456')";
         
         $result = self::$conn->query($sql);
 
         $this->assertTrue($result, 'Failed to insert data into the database.');
 
         // Test retrieving the inserted data
-        $sql = "SELECT * FROM taikhoan WHERE username = 'dangdo'";
+        $sql = "SELECT * FROM taikhoan WHERE username = 'dangdo1'";
 
         $result = self::$conn->query($sql);
 
