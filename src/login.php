@@ -2,13 +2,13 @@
     require_once ('../config/config.php');
     $username = '';
     $password = '';
+    echo 123;
+    die();
     if(isset($_POST['username']) && isset($_POST['password']))
     {   
         $username = $_POST['username'];
         $password = $_POST['password'];
     }
-    echo 123;
-    die();
     if(!empty($username) && !empty($password))
     {
         $con = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
