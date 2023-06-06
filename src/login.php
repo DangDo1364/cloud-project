@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="card-body">
                                         
-                                        <form action="checklogin.php" method="post">
+                                        <form action="login.php" method="post">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress"> TÀI KHOẢN </label>
                                                 <input class="form-control py-4" id="username" name="username" type="text"/>
@@ -65,3 +65,36 @@
         </div>
     </body>
 </html>
+
+<?php
+    require_once ('../config/config.php');
+    $username = '';
+    $password = '';
+
+    if(isset($_POST['username']) && isset($_POST['password']))
+    {   
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    }
+    
+    if(!empty($username) && !empty($password))
+    {
+        $con = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
+        if ($con -> connect_error) {
+            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+            exit();
+        }
+        $sql = 'SELECT * from taikhoan where username = '$username' and password = '$password'';
+	    $query = mysqli_query($con,$sql);
+        echo "Returned rows are: " . $query->num_rows;
+	    $num_rows = mysqli_num_rows($query);
+	    if ($num_rows==0) 
+        {
+            header("Location: login.php?error=Not found");          
+        }
+        else
+        {
+            header('Location: admin.php');
+        }
+    }
+?>
