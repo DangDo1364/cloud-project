@@ -8,9 +8,17 @@ $mysqli = new mysqli("beliy-db.mysql.database.azure.com", "dangdo",
 $sql = "SELECT * FROM taikhoan where username = 'dangdo' and password = '123456'";
 
 if ($result = $mysqli->query($sql)) {
-    echo "Returned rows are: " . $result -> num_rows;
-    // Free result set
+    if($result -> num_rows > 0)
+    {
+        header('Location: admin.php');
+    }
+    else
+    {
+        header('Location: login.php');
+    }
     $result -> free_result();
+
+    
 }
 
 foreach ($users as $user) {
