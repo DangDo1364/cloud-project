@@ -1,6 +1,6 @@
 <?php
 require_once ('../config/config.php');
-if(!empty($_POST['login']))
+if(!empty($_POST))
 {
     $username = '';
     $password = '';
@@ -24,9 +24,10 @@ if(!empty($_POST['login']))
 	    $num_rows = mysqli_num_rows($query);
 	    if ($num_rows==0) 
         {
-            header('Location: login.php');           
+            header("Location: login.php?error=Not found");          
         }
-        else{
+        else
+        {
             header('Location: admin.php');
         }
     }

@@ -40,7 +40,7 @@
                                                 <input class="form-control py-4" id="password" name="password" type="password"/>
                                             </div>                                             
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">   
-                                                <input class="btn btn-primary" type="submit" name = "login" value="Login">
+                                                <input class="btn btn-primary" type="submit" value="Login">
                                                 <a class="small" href="#"> Quên mật khẩu ?</a>
                                             </div>
                                         </form>
