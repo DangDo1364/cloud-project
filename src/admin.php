@@ -1,12 +1,3 @@
-<?php session_start();?>
-
-<?php 
-    if($_SESSION['USER'] == '')
-    {
-    header('Location: login.php');    
-    }
-?>
-
 <?php
 require_once ('../config/config.php');
 ?>
