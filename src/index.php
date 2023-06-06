@@ -18,3 +18,4 @@ foreach ($users as $user) {
     echo $user->username . " " . $user->password;
     echo "<br>";
 }
+?>
