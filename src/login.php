@@ -1,9 +1,9 @@
 <?php
     require_once ('../config/config.php');
-    $username = '';
-    $password = '';
     echo 123;
     die();
+    $username = '';
+    $password = '';
     if(isset($_POST['username']) && isset($_POST['password']))
     {   
         $username = $_POST['username'];
