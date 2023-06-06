@@ -1,5 +1,3 @@
-<?php session_start();?>
-
 <?php
 require_once ('../config/config.php');
 if(!empty($_POST['login']))
