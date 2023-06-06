@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="card-body">
                                         
-                                        <form action="./handleLogin.php" method="post">
+                                        <form action="handleLogin.php" method="post">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress"> TÀI KHOẢN </label>
                                                 <input class="form-control py-4" id="username" name="username" type="text"/>
