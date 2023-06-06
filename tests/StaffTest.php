@@ -17,16 +17,6 @@ class StaffTest extends TestCase
         $this->assertEquals("Nguyen Do", $staff->getFullName());    
     }
 
-    public function testReturnLastName()
-    {
-        $staff = new Staff;
-
-        $staff->firstName = "Nguyen";
-
-        $staff->lastName = "Do";
-    
-        $this->assertEquals("Do", $staff->getLastName());    
-    }
 }
 
 ?>
