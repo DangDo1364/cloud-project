@@ -1,10 +1,24 @@
 <?php
-    echo 0;
+
+    $mysqli = new mysqli("beliy-db.mysql.database.azure.com", "dangdo", 
+    "01259977014Do@", "banxe");
+
+    $sql = 'SELECT * from taikhoan where username = '$username' and password = '$password'';    
+    $result = $mysqli->query($sql);
+        if ($result-> num_rows==0) 
+        {
+            header('Location: login.php');
+            echo "Not found";
+            // header("Location: login.php?error=Not found");          
+        }
+        else
+        {
+            header('Location: admin.php');
+        }
     // require_once ('../config/config.php');
     // $username = '123';
     // $password = '';
     // check if isset username and password
-    echo 2;
     // if(isset($_POST['username']) && isset($_POST['password']))
     // {   
     //     echo 1;
