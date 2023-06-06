@@ -21,7 +21,8 @@
         $num_rows = mysqli_num_rows($query);
         if ($num_rows==0) 
         {
-            header("Location: login.php?error=Not found");          
+            echo "Not found";
+            // header("Location: login.php?error=Not found");          
         }
         else
         {
