@@ -10,15 +10,13 @@ $sql = "SELECT * FROM taikhoan where username = 'dangdo' and password = '123456'
 if ($result = $mysqli->query($sql)) {
     if($result -> num_rows > 0)
     {
-        header('Location: admin.php');
+        header('Location: https://cloud-php-app.azurewebsites.net/src/admin.php');
     }
     else
     {
-        header('Location: login.php');
+        header('Location: https://cloud-php-app.azurewebsites.net/src/login.php');
     }
     $result -> free_result();
-
-    
 }
 
 foreach ($users as $user) {
