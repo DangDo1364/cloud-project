@@ -1,8 +1,8 @@
 <?php
     echo 0;
-    require_once ('../config/config.php');
-    $username = '123';
-    $password = '';
+    // require_once ('../config/config.php');
+    // $username = '123';
+    // $password = '';
     // check if isset username and password
     echo 2;
     // if(isset($_POST['username']) && isset($_POST['password']))
