@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 echo "Hello from the docker yooooo container <br>";
 
 $mysqli = new mysqli("beliy-db.mysql.database.azure.com", "dangdo", 
@@ -13,19 +13,17 @@ if(isset($_POST['username']) && isset($_POST['password']))
 }
 
 $sql = "SELECT * FROM taikhoan where username = '$username' and password = '$password' limit 1";
-echo "d7";
+echo "d8";
 if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
         $users[] = $data;
     }
     if ($users == null) {
-        echo "<script>window.location.href='login.php';</script>";
-        exit;
+        header("location: login.php?error=Not found", true, 301);          
     }
     else
     {
-        echo "<script>window.location.href='admin.php';</script>";
-        exit;
+        header('location: admin.php', true, 301);
     }
 }
 
