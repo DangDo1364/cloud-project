@@ -19,11 +19,11 @@ if ($result = $mysqli->query($sql)) {
         $users[] = $data;
     }
     if ($users == null) {
-        header("Location: login.php?error=Not found");          
+        header("Location: login.php?error=Not found", true, 301);          
     }
     else
     {
-        header('Location: admin.php');
+        header('Location: admin.php', true, 301);
     }
 }
 
