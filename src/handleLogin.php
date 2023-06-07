@@ -18,13 +18,14 @@ if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
         $users[] = $data;
     }
-    print_r($users[0]->username);
-    die();
+    if ($users == null) {
+        header("Location: login.php?error=Not found");          
+    }
+    else
+    {
+        header('Location: admin.php');
+    }
 }
 
-foreach ($users as $user) {
-    echo "<br>";
-    echo $user->username . " " . $user->password;
-    echo "<br>";
-}
+
 ?>
