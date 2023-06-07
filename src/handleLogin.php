@@ -13,17 +13,17 @@ if(isset($_POST['username']) && isset($_POST['password']))
 }
 
 $sql = "SELECT * FROM taikhoan where username = '$username' and password = '$password' limit 1";
-echo "d5";
+echo "d6";
 if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
         $users[] = $data;
     }
     if ($users == null) {
-        header("Location: login.php?error=Not found", true, 301);          
+        header("location: login.php?error=Not found", true, 301);          
     }
     else
     {
-        header('Location: admin.php', true, 301);
+        header('location: admin.php', true, 301);
     }
 }
 
