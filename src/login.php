@@ -32,17 +32,23 @@
                                                 <label class="small mb-1" for="inputEmailAddress"> TÀI KHOẢN </label>
                                                 <input class="form-control py-4" id="username" name="username" type="text"/>
                                             </div>
-                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputPassword"> MẬT KHẨU </label>
                                                 <input class="form-control py-4" id="password" name="password" type="password"/>
-                                            </div>                                             
+                                            </div>
+                                            <?php
+                                                if (isset($_GET['error'])) {
+                                                    echo
+                                                    "<div class='alert alert-danger' role='alert'>
+                                                        Sai tài khoản hoặc mật khẩu!
+                                                    </div>";
+                                                }
+                                            ?>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">   
-                                                <input class="btn btn-primary" type="submit" value="Login">
+                                                <input class="btn btn-primary" type="submit" value="Đăng nhập">
                                                 <a class="small" href="#"> Quên mật khẩu ?</a>
                                             </div>
                                         </form>
-                                        
                                     </div>
                                 </div>
                             </div>
