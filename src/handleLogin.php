@@ -13,7 +13,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 }
 
 $sql = "SELECT * FROM taikhoan where username = '$username' and password = '$password' limit 1";
-
+echo "d5";
 if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
         $users[] = $data;
