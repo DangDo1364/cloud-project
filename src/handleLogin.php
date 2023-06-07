@@ -5,7 +5,6 @@ echo "Hello from the docker yooooo container <br>";
 $mysqli = new mysqli("beliy-db.mysql.database.azure.com", "dangdo", 
 "01259977014Do@", "banxe");
 
-$sql = "SELECT * FROM taikhoan where username = 'dangdo' and password = '123456' limit 1";
 
 if(isset($_POST['username']) && isset($_POST['password']))
 {   
@@ -13,8 +12,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
     $password = $_POST['password'];
 }
 
-echo $username . " " . $password;
-die();
+$sql = "SELECT * FROM taikhoan where username = '$username' and password = '$password' limit 1";
 
 if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
