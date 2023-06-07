@@ -1,22 +1,18 @@
 <?php
 
-echo "Hello from the docker yooooo container";
+echo "Hello from the docker yooooo container <br>";
 
 $mysqli = new mysqli("beliy-db.mysql.database.azure.com", "dangdo", 
 "01259977014Do@", "banxe");
 
-$sql = "SELECT * FROM taikhoan where username = 'dangdo' and password = '123456'";
+$sql = "SELECT * FROM taikhoan where username = 'dangdo' and password = '123456' limit 1";
 
 if ($result = $mysqli->query($sql)) {
-    if($result -> num_rows > 0)
-    {
-        header('Location: https://cloud-php-app.azurewebsites.net/src/admin.php');
+    while ($data = $result->fetch_object()) {
+        $users[] = $data;
     }
-    else
-    {
-        header('Location: https://cloud-php-app.azurewebsites.net/src/login.php');
-    }
-    $result -> free_result();
+    print_r($users[0]->username);
+    die();
 }
 
 foreach ($users as $user) {
