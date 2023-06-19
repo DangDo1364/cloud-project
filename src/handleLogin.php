@@ -4,7 +4,6 @@
     $mysqli = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
     "01259977014Do@", "banxe");
 
-
     if(isset($_POST['username']) && isset($_POST['password']))
     {   
         $username = $_POST['username'];
