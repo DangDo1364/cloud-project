@@ -45,7 +45,7 @@
                                                 }
                                             ?>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">   
-                                                <input class="btn btn-primary" type="submit" value="Đăng nhập">
+                                                <input id="btn_login" class="btn btn-primary" type="submit" value="Đăng nhập">
                                                 <a class="small" href="#"> Quên mật khẩu ?</a>
                                             </div>
                                         </form>
