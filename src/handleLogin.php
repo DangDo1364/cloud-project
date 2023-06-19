@@ -1,6 +1,8 @@
 <?php
     ob_start();
 
+    echo "abc"
+
     $mysqli = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
     "01259977014Do@", "banxe");
 
