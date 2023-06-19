@@ -6,7 +6,7 @@
     "01259977014Do@", "banxe"); 
 
     if ($mysqli->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $mysqli->connect_error);
     }
 
     if(isset($_POST['username']) && isset($_POST['password']))
