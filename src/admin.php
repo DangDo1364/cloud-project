@@ -68,15 +68,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                <?php
-                                        // lấy dữ liệu hãng ra
-                                        $sql = 'select * from hang';   
-                                        $categoryList = executeResult($sql);
-                                        foreach ($categoryList as $item)
-                                        {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
-                                        }
-                                ?>     
+
                                 </nav>
                             </div> 
                             
@@ -92,7 +84,17 @@
                         </div>
                     </div>
                     
-
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                           <?php
+                                //nếu có session tên dangnhap thì ta thực hiện lệnh dưới
+                                if(isset($_SESSION['USER']) && $_SESSION['USER'] != NULL)
+                                {
+                                    echo $_SESSION['USER'];
+                                                    
+                                }
+                            ?>       
+                    </div>
                 </nav>
             </div>     
                     
