@@ -1,7 +1,10 @@
-<?php  ob_start();
+<?php  
 session_start();?>
 
 <?php
+
+ob_start();
+
 require_once ('../db/config.php');
 
 if(!empty($_POST))
