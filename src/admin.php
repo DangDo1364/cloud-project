@@ -68,7 +68,17 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-
+                                <?php
+                                        // lấy dữ liệu hãng ra
+                                        $sql = 'select * from hang';   
+                                        $categoryList = executeResult($sql);
+                                        print_r($categoryList);
+                                        die();
+                                        foreach ($categoryList as $item)
+                                        {
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                        }
+                                ?>     
                                 </nav>
                             </div> 
                             
