@@ -8,7 +8,7 @@
     }
 ?>
 <?php
-require_once ('../db/dbhelper.php');
+require_once ('../config/dbhelper.php');
 
 if(!empty($_POST))
 {
