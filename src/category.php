@@ -3,14 +3,14 @@
 <?php
 ob_start();
 
-require_once ('../config/config.php');
+require_once ('../config/dbhelper.php');
 
 if(!empty($_POST))
 {
     $tenhang = $_POST['tenhang'];
   
     $sql = 'delete from hang where tenhang = "'.$tenhang.'"';
-    execute($sql);
+    //execute($sql);
     header('Location: category.php');
     die();
 
