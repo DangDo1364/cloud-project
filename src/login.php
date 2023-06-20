@@ -28,8 +28,8 @@ if(!empty($_POST))
         }
         else
         {
-            $_SESSION['USER'] = $username;
-            unset($_SESSION['dangnhap']);
+            // $_SESSION['USER'] = $username;
+            // unset($_SESSION['dangnhap']);
             header('location: admin.php', true, 301);
         }
     }
