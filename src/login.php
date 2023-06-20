@@ -1,4 +1,38 @@
+<?php  ob_start();
+session_start();?>
 
+<?php
+require_once ('../db/config.php');
+
+if(!empty($_POST))
+{
+    $mysqli = new mysqli(HOST, USERNAME,  PASSWORD, DATABASE); 
+
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+    }
+
+    if(isset($_POST['username']) && isset($_POST['password']))
+    {   
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    }
+
+    $sql = "SELECT * FROM taikhoan where username = '$username' and password = '$password' limit 1";
+    if ($result = $mysqli->query($sql)) {
+        while ($data = $result->fetch_object()) {
+            $users[] = $data;
+        }
+        if ($users == null) {
+            header("location: login.php?error=Not found", true, 301);          
+        }
+        else
+        {
+            header('location: admin.php', true, 301);
+        }
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -29,28 +63,30 @@
                                     </div>
                                     <div class="card-body">
                                         
-                                        <form action="handleLogin.php" method="post">
+                                        <form method="post" onsubmit = "return dangnhap()">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress"> TÀI KHOẢN </label>
                                                 <input class="form-control py-4" id="username" name="username" type="text"/>
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputPassword"> MẬT KHẨU </label>
                                                 <input class="form-control py-4" id="password" name="password" type="password"/>
                                             </div>
                                             <?php
-                                                if (isset($_GET['error'])) {
-                                                    echo
-                                                    "<div class='alert alert-danger' role='alert'>
-                                                        Sai tài khoản hoặc mật khẩu!
-                                                    </div>";
+                                                //nếu có session tên dangnhap thì ta thực hiện lệnh dưới
+                                                if(isset($_SESSION['dangnhap']) && $_SESSION['dangnhap'] != NULL)
+                                                {
+                                                    echo '<h4 style="color: red"> '.$_SESSION['dangnhap'];' </h4>';
+                                                    
                                                 }
-                                            ?>
+                                            ?>                                              
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">   
-                                                <input id="btn_login" class="btn btn-primary" type="submit" value="Đăng nhập">
+                                                <input class="btn btn-primary" type="submit" value="Xác nhận">
                                                 <a class="small" href="#"> Quên mật khẩu ?</a>
                                             </div>
                                         </form>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -71,4 +107,3 @@
         </div>
     </body>
 </html>
-
