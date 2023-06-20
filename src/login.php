@@ -1,9 +1,9 @@
 <?php
     
-    if(!empty($_POST))
+if(!empty($_POST))
 {
     ob_start();
-
+    session_start();
     $mysqli = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
     "01259977014Do@", "banxe"); 
 
@@ -23,10 +23,13 @@
             $users[] = $data;
         }
         if ($users == null) {
-            header("location: login.php?error=Not found", true, 301);          
+            header("location: login.php?error=Not found", true, 301); 
+            $_SESSION['dangnhap'] = 'Sai tài khoản hoặc mật khẩu!';         
         }
         else
         {
+            $_SESSION['USER'] = $username;
+            unset($_SESSION['dangnhap']);
             header('location: admin.php', true, 301);
         }
     }
