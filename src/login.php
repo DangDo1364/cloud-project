@@ -3,7 +3,7 @@
 if(!empty($_POST))
 {
     ob_start();
-    // session_start();
+    session_start();
     $mysqli = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
     "01259977014Do@", "banxe"); 
 
@@ -28,8 +28,10 @@ if(!empty($_POST))
         }
         else
         {
-            // $_SESSION['USER'] = $username;
-            // unset($_SESSION['dangnhap']);
+            $_SESSION['USER'] = $username;
+            unset($_SESSION['dangnhap']);
+            // print_r($_SESSION['USER']);
+            // die();
             header('location: admin.php', true, 301);
         }
     }

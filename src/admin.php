@@ -3,10 +3,11 @@
 
     require_once ('../config/dbhelper.php');
 
-    session_start();   
+    session_start();
  
     if($_SESSION['USER'] == '')
     {
+        // die("1111");
         header('Location: login.php');    
     }
 ?>
