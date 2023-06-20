@@ -85,7 +85,7 @@ if(!empty($_POST))
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
                                         }
                                 ?>       
                                 </nav>
@@ -173,8 +173,8 @@ if(!empty($_POST))
                                                         <td> 
                                                             <form method="post">
                                                                 <input value="'.$item['id'].'" type="hidden" name="id" id="id">
-                                                                <input value="'.$item['tenhang'].'" type="hidden" name="tenhang" id="tenhang">    
-                                                                <a class="btn btn-primary" href="update_product.php?id='.$item['id'].'&tenhang='.$item['tenhang'].'"> Sửa </a> &emsp;   
+                                                                <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">    
+                                                                <a class="btn btn-primary" href="update_product.php?id='.$item['id'].'&tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
                                                                 <button class="btn btn-primary"> Xóa </button>
                                                             </form>
                                                         </td> 

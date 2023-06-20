@@ -103,7 +103,7 @@ if(!empty($_POST)){
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
                                         }
                                 ?>       
                                 </nav>
@@ -161,7 +161,7 @@ if(!empty($_POST)){
                                                             $categoryList = executeResult($sql);
                                                             foreach ($categoryList as $item)
                                                             {
-                                                                echo '<option> '.$item['tenhang'].' </option>';                                            
+                                                                echo '<option> '.$item->tenhang.' </option>';                                            
                                                             }
                                                     ?> 
                                                     </select>

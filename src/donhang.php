@@ -84,7 +84,7 @@ if(!empty($_POST))
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
                                         }
                                 ?>       
                                 </nav>

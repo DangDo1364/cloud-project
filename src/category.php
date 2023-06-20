@@ -78,7 +78,7 @@ if(!empty($_POST))
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
                                         }
                                 ?>       
                                 </nav>
@@ -147,12 +147,12 @@ if(!empty($_POST))
                                         foreach ($categoryList as $item)
                                         {
                                             echo '<tr>
-                                                        <td>'.$item['tenhang'].'</td>
+                                                        <td>'.$item->tenhang.'</td>
                                                         <td> <img src='.$item['logo'].' height="100" width-max="100" alt="Khong tai duoc"> </td>   
                                                         <td> 
                                                             <form method="post">
-                                                            <input value="'.$item['tenhang'].'" type="hidden" name="tenhang" id="tenhang">
-                                                            <a class="btn btn-primary" href="update_category.php?tenhang='.$item['tenhang'].'"> Sửa </a> &emsp;   
+                                                            <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">
+                                                            <a class="btn btn-primary" href="update_category.php?tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
                                                             <button class="btn btn-primary" name="xoa" id="xoa"> Xóa </button>
                                                             </form>
                                                         </td> 

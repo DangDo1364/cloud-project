@@ -100,7 +100,7 @@ if(!empty($_POST)){
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
                                         }
                                 ?>       
                                 </nav>
@@ -184,7 +184,7 @@ if(!empty($_POST)){
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="id_category"> Hãng </label>
-                                                        <input value="'.$item['tenhang'].'" class="form-control py-4" id="tenhang" name="tenhang" type="text"/> 
+                                                        <input value="'.$item->tenhang.'" class="form-control py-4" id="tenhang" name="tenhang" type="text"/> 
                                                     </div>
                                                 </div>
                                             </div>
