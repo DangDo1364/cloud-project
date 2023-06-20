@@ -1,8 +1,9 @@
 <?php 
-    require_once ('../config/dbhelper.php');
-    session_start();   
-    
     ob_start();
+
+    require_once ('../config/dbhelper.php');
+
+    session_start();   
  
     if($_SESSION['USER'] == '')
     {
