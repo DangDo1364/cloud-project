@@ -161,17 +161,17 @@ if(!empty($_POST))
                                         foreach ($categoryList as $item)
                                         {
                                             echo '<tr>
-                                                        <td>'.$item['id'].'</td>
-                                                        <td>'.$item['tensp'].'</td>  
-                                                        <td>'.$item['soluongdat'].'</td>  
-                                                        <td>'.$item['tenkh'].'</td>
-                                                        <td>'.$item['sdt'].'</td>
-                                                        <td>'.$item['email'].'</td>  
-                                                        <td>'.$item['diachi'].'</td>  
-                                                        <td>'.$item['ghichu'].'</td>                                                            
+                                                        <td>'.$item->id.'</td>
+                                                        <td>'.$item->tensp.'</td>  
+                                                        <td>'.$item->soluongdat.'</td>  
+                                                        <td>'.$item->tenkh.'</td>
+                                                        <td>'.$item->sdt.'</td>
+                                                        <td>'.$item->email.'</td>  
+                                                        <td>'.$item->diachi.'</td>  
+                                                        <td>'.$item->ghichu.'</td>                                                            
                                                         <td> 
                                                             <form method="post">
-                                                            <input value="'.$item['id'].'" type="hidden" name="id" id="id">
+                                                            <input value="'.$item->id.'" type="hidden" name="id" id="id">
                                                             <button class="btn btn-primary" name="xoa" id="xoa"> Xóa </button>
                                                             </form>
                                                         </td> 

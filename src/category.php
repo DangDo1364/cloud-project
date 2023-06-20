@@ -148,7 +148,7 @@ if(!empty($_POST))
                                         {
                                             echo '<tr>
                                                         <td>'.$item->tenhang.'</td>
-                                                        <td> <img src='.$item['logo'].' height="100" width-max="100" alt="Khong tai duoc"> </td>   
+                                                        <td> <img src='.$item->logo.' height="100" width-max="100" alt="Khong tai duoc"> </td>   
                                                         <td> 
                                                             <form method="post">
                                                             <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">

@@ -157,7 +157,7 @@ if(!empty($_POST)){
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label class="small mb-1" for="name"> Hình ảnh </label>
-                                                                <input value="'.$item['logo'].'" class="form-control py-4" id="hinhanh" name="hinhanh" type="text"/>
+                                                                <input value="'.$item->logo.'" class="form-control py-4" id="hinhanh" name="hinhanh" type="text"/>
                                                             </div>
                                                         </div> 
                                                     </div>

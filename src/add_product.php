@@ -29,15 +29,16 @@ if(!empty($_POST)){
         $ccxang = $_POST['ccxang'];
         $phanh = $_POST['phanh'];
         $hopso = $_POST['hopso'];
+        $noidung = $_POST['noidung'];
         $tenhang = $_POST['tenhang'];
     }
     
     if(!empty($name) && !empty($gia)){
-        $sql = 'INSERT INTO sanpham VALUES (NULL,"'.$name.'",'.$gia.',"'.$hinhanh.'","'.$kichthuoc.'","'.$chieucaoyen.'","'.$kichthuocbanh.'","'.$dongco.'","'.$cc.'","'.$congsuat.'","'.$ccnhot.'","'.$ccxang.'","'.$phanh.'","'.$hopso.'","'.$tenhang.'")';
-    execute($sql);
-
-    header('Location: product.php?tenhang='.$tenhang.'');
-    die();
+        $sql = 'INSERT INTO sanpham VALUES (NULL,"'.$name.'",'.$gia.',"'.$hinhanh.'","'.$kichthuoc.'","'.$chieucaoyen.'","'.$kichthuocbanh.'","'.$dongco.'","'.$cc.'","'.$congsuat.'","'.$ccnhot.'","'.$ccxang.'","'.$phanh.'","'.$hopso.'","'.$noidung.'","'.$tenhang.'")';
+        execute($sql);
+        
+        header('Location: product.php?tenhang='.$tenhang.'');
+        die();
     }
 }
 ?>
@@ -247,6 +248,12 @@ if(!empty($_POST)){
                                                     <div class="form-group">
                                                         <label class="small mb-1"> Hộp số </label>
                                                         <input class="form-control py-4" id="hopso" name="hopso" type="text"/>
+                                                    </div>
+                                                </div> 
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1"> noidung </label>
+                                                        <input class="form-control py-4" id="noidung" name="noidung" type="text"/>
                                                     </div>
                                                 </div> 
                                             </div>
