@@ -1,12 +1,11 @@
 <?php
-
-ob_start();
-
-require_once ('../db/config.php');
-
-if(!empty($_POST))
+    
+    if(!empty($_POST))
 {
-    $mysqli = new mysqli(HOST, USERNAME,  PASSWORD, DATABASE); 
+    ob_start();
+
+    $mysqli = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
+    "01259977014Do@", "banxe"); 
 
     if ($mysqli->connect_error) {
         die("Connection failed: " . $mysqli->connect_error);
