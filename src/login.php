@@ -30,8 +30,6 @@ if(!empty($_POST))
         {
             $_SESSION['USER'] = $username;
             unset($_SESSION['dangnhap']);
-            // print_r($_SESSION['USER']);
-            // die();
             header('location: admin.php', true, 301);
         }
     }
