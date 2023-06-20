@@ -1,7 +1,7 @@
 <?php 
     require_once ('../config/dbhelper.php');
     ob_start();
-    session_start();
+ 
     if($_SESSION['USER'] == '')
     {
         header('Location: login.php');    
