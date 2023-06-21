@@ -1,11 +1,16 @@
-<!DOCTYPE html>
 
-<?php
-ob_start();
 
-require_once ('../config/dbhelper.php');
+<?php 
+    ob_start();
 
-session_start();
+    require_once ('../config/dbhelper.php');
+
+    session_start();
+
+    if($_SESSION['USER'] == '')
+    {
+        header('Location: login.php');    
+    }
 
 if(!empty($_POST))
 {
@@ -17,6 +22,7 @@ if(!empty($_POST))
 }
 ?>
 
+<!DOCTYPE html>
 <html lang="vi">
     <head>
         <meta charset="utf-8" />
