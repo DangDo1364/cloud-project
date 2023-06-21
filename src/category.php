@@ -10,8 +10,6 @@
         header('Location: login.php');    
     }
 
-    echo $_SESSION['USER']; 
-
 if(!empty($_POST))
 {
     $tenhang = $_POST['tenhang'];
