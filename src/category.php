@@ -1,5 +1,3 @@
-
-
 <?php 
     ob_start();
 
@@ -11,6 +9,9 @@
     {
         header('Location: login.php');    
     }
+
+    echo $_SESSION['USER']; 
+    die();
 
 if(!empty($_POST))
 {
