@@ -13,7 +13,7 @@ if(!empty($_POST))
   
     $sql = 'delete from hang where tenhang = "'.$tenhang.'"';
     execute($sql);
-    header('Location: category.php');
+    header('Location: category.php');    
 }
 ?>
 

@@ -11,8 +11,10 @@
 <?php
 require_once ('../config/dbhelper.php');
 
-if(!empty($_POST)){
+if(!empty($_POST))
+{
     $name = '';
+    
     if(isset($_POST['name']))
     {
         $name = $_POST['name'];
@@ -22,8 +24,7 @@ if(!empty($_POST)){
     if(!empty($name))
     {
 
-        $sql = 'INSERT INTO hang (tenhang,logo) 
-                VALUES ("'.$name.'","'.$hinhanh.'")';
+        $sql = 'INSERT INTO hang (tenhang,logo) VALUES ("'.$name.'","'.$hinhanh.'")';
         execute($sql);
         header('Location: category.php');
     }
