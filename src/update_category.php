@@ -21,7 +21,7 @@ if(!empty($_POST)){
     
     if(!empty($hinhanh))
     {      
-        $sql = 'update hang set logo = ".$hinhanh." where tenhang = ".$name."';
+        $sql = "UPDATE hang SET logo = '".$hinhanh."'  WHERE tenhang = '".$name."'";
         execute($sql);
         header('Location: category.php');   
     }
