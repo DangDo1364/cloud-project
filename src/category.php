@@ -9,6 +9,18 @@
     {
         header('Location: login.php');    
     }
+    if(!empty($_POST))
+    {
+        $tenhang = $_POST['tenhang'];
+        if(!empty($tenhang))
+        {
+            $sql = "DELETE FROM hang WHERE tenhang = ".$tenhang."";
+            execute($sql);
+            header('Location: category.php');
+        }
+           
+    }
+
 ?>
 
 <!DOCTYPE html>
