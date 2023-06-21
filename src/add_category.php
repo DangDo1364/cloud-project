@@ -23,8 +23,7 @@ if(!empty($_POST))
     
     if(!empty($name))
     {
-
-        $sql = 'INSERT INTO hang (tenhang,logo) VALUES ("'.$name.'","'.$hinhanh.'")';
+        $sql = "insert into hang VALUES ($name,$hinhanh)";
         execute($sql);
         header('Location: category.php');
     }
