@@ -17,7 +17,6 @@ if(!empty($_POST))
     $sql = 'delete from donhang where id = "'.$id.'"';
     execute($sql);
     header('Location: donhang.php');
-    die();
 
 }
 ?>
