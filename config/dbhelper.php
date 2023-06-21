@@ -14,7 +14,10 @@ function execute($sql)
     }
  
     $mysqli -> set_charset("utf8");
-    $mysqli -> query($sql);
+    if ($mysqli->query($sql) === FALSE) 
+    {
+        echo "Error: " . $sql . "<br>" . $conn->error;       
+    }
     $mysqli -> close();
 }
 
