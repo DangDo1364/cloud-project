@@ -26,7 +26,6 @@ if(!empty($_POST)){
                 VALUES ("'.$name.'","'.$hinhanh.'")';
         execute($sql);
         header('Location: category.php');
-        die();
     }
 }
 ?>
