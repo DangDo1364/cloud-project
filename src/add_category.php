@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php session_start();?>
 
 <?php 
     if($_SESSION['USER'] == '')
@@ -9,12 +8,13 @@
 ?>
 
 <?php
+ob_start();
 require_once ('../config/dbhelper.php');
-
+session_start();
 if(!empty($_POST))
 {
     $name = '';
-    
+
     if(isset($_POST['name']))
     {
         $name = $_POST['name'];
