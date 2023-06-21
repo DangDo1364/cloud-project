@@ -9,8 +9,6 @@
     {
         header('Location: login.php');    
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -121,7 +119,7 @@
                             </div>
                             
                             <div class="card-body">
-                                <form method="post">
+                                <form method="post" action="handleAddCat.php">
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
