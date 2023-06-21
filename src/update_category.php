@@ -24,7 +24,7 @@ if(!empty($_POST)){
         
         $sql = 'update hang set logo = "'.$hinhanh.'" where tenhang = "'.$name.'"';
         execute($sql);
-        header('Location: category.php');
+        header('Location: category.php');   
     }
 }
 ?>

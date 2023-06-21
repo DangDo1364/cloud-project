@@ -18,8 +18,6 @@ if(!empty($_POST))
     $sql = 'delete from sanpham where id = "'.$id.'"';
     execute($sql);
     header('Location: product.php?tenhang='.$tenhang.'');
-    die();
-
 }
 ?>
 

@@ -38,7 +38,6 @@ if(!empty($_POST)){
         execute($sql);
         
         header('Location: product.php?tenhang='.$tenhang.'');
-        die();
     }
 }
 ?>

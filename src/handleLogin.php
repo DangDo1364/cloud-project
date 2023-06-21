@@ -1,6 +1,6 @@
 <?php
     
-    if(!empty($_POST))
+if(!empty($_POST))
 {
     ob_start();
 
