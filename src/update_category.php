@@ -4,7 +4,7 @@
 <?php 
     if($_SESSION['USER'] == '')
     {
-    header('Location: login.php');    
+        header('Location: login.php');    
     }
 ?>
 <?php
@@ -20,9 +20,8 @@ if(!empty($_POST)){
     }
     
     if(!empty($hinhanh))
-    {
-        
-        $sql = 'update hang set logo = "'.$hinhanh.'" where tenhang = "'.$name.'"';
+    {      
+        $sql = 'update hang set logo = ".$hinhanh." where tenhang = ".$name."';
         execute($sql);
         header('Location: category.php');   
     }

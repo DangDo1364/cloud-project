@@ -8,7 +8,7 @@ if(!empty($_POST))
 {
     $tenhang = $_POST['tenhang'];
     echo $tenhang;
-    $sql = "DELETE FROM hang WHERE tenhang = ".$tenhang."";
+    $sql = "delete from hang where tenhang = ".$tenhang."";
     execute($sql);
     header('Location: category.php');    
 }
