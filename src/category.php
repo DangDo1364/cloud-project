@@ -11,12 +11,10 @@
     }
 
     echo $_SESSION['USER']; 
-    die();
 
 if(!empty($_POST))
 {
     $tenhang = $_POST['tenhang'];
-  
     $sql = 'delete from hang where tenhang = "'.$tenhang.'"';
     execute($sql);
     header('Location: category.php');    
@@ -105,12 +103,7 @@ if(!empty($_POST))
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                           <?php
-                                //nếu có session tên dangnhap thì ta thực hiện lệnh dưới
-                                if(isset($_SESSION['USER']) && $_SESSION['USER'] != NULL)
-                                {
-                                    echo $_SESSION['USER'];
-                                                    
-                                }
+                                echo $_SESSION['USER'];
                           ?>  
                     </div>
                 </nav>
