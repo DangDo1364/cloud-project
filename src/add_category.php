@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<?php 
-    if($_SESSION['USER'] == '')
-    {
-    header('Location: login.php');    
-    }
-?>
-
 <?php
 ob_start();
+
 require_once ('../config/dbhelper.php');
+
 session_start();
+
+if($_SESSION['USER'] == '')
+{
+        header('Location: login.php');    
+}
+
 if(!empty($_POST))
 {
     $name = '';
@@ -23,7 +24,8 @@ if(!empty($_POST))
     
     if(!empty($name))
     {
-        $sql = "insert into hang VALUES ($name,$hinhanh)";
+        echo $name
+        $sql = "INSERT INTO hang VALUES ('$name', '$hinhanh')";
         execute($sql);
         header('Location: category.php');
     }
