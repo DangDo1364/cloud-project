@@ -9,19 +9,6 @@
     {
         header('Location: login.php');    
     }
-    if(!empty($_POST))
-    {
-        $tenhang = $_POST['tenhang'];
-        echo $tenhang;
-        if(!empty($tenhang))
-        {
-            $sql = "DELETE FROM hang WHERE tenhang = ".$tenhang."";
-            execute($sql);
-            header('Location: category.php');
-        }
-           
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -153,7 +140,7 @@
                                                         <td>'.$item->tenhang.'</td>
                                                         <td> <img src='.$item->logo.' height="100" width-max="100" alt="Khong tai duoc"> </td>   
                                                         <td> 
-                                                            <form method="post" action ="category.php">
+                                                            <form method="post" action ="delete_category.php">
                                                             <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">
                                                             <a class="btn btn-primary" href="update_category.php?tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
                                                             <button class="btn btn-primary" name="xoa" id="xoa"> Xóa </button>
