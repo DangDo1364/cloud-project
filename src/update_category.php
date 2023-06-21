@@ -127,7 +127,7 @@
                                         $categoryList = executeResult($sql);
                                         foreach ($categoryList as $item)
                                         { echo '
-                                        <form method="post">
+                                        <form method="post" action = "handleUpdateCat.php">
                                                     <div class="form-row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
