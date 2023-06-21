@@ -15,14 +15,14 @@ if(!empty($_POST)){
     
     if(isset($_POST['hinhanh']))
     {
-    $name = $_POST['name'];
-    $hinhanh = $_POST['hinhanh'];
+        $name = $_POST['name'];
+        $hinhanh = $_POST['hinhanh'];
     }
     
     if(!empty($hinhanh))
     {
         
-        $sql = ' update hang set  logo = "'.$hinhanh.'" where tenhang = "'.$name.'"';
+        $sql = 'update hang set logo = "'.$hinhanh.'" where tenhang = "'.$name.'"';
         execute($sql);
         header('Location: category.php');
         die();

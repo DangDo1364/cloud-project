@@ -5,6 +5,8 @@ ob_start();
 
 require_once ('../config/dbhelper.php');
 
+session_start();
+
 if(!empty($_POST))
 {
     $tenhang = $_POST['tenhang'];
@@ -125,7 +127,7 @@ if(!empty($_POST))
                                 
                                 &emsp; &emsp;
                                 
-                                <a href="add_category.php" class="btn btn-primary"> Thêm sản phẩm </a>
+                                <a href="add_category.php" class="btn btn-primary"> Thêm hãng </a>
                             </div>
                             
                             <div class="card-body">
