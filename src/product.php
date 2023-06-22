@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<?php session_start();?>
 
 <?php 
+    ob_start();
+
+    require_once ('../config/dbhelper.php');
+
+    session_start();
+
     if($_SESSION['USER'] == '')
     {
-    header('Location: login.php');    
+        header('Location: login.php');    
     }
 ?>
-<?php
-require_once ('../config/dbhelper.php');
 
-if(!empty($_POST))
-{
-    $id = $_POST['id'];
-    $tenhang = $_POST['tenhang'];
-    
-    $sql = 'delete from sanpham where id = "'.$id.'"';
-    execute($sql);
-    header('Location: product.php?tenhang='.$tenhang.'');
-}
-?>
-
+<!DOCTYPE html>
 <html lang="vi">
     <head>
         <meta charset="UTF-8" />
@@ -162,13 +154,13 @@ if(!empty($_POST))
                                         <tbody>
                                         <?php
                                         // lấy dữ liệu hãng ra
-                                        $sql = 'SELECT * FROM sanpham Where tenhang = "'.$tenhang.'"';   
+                                        $sql = 'SELECT * FROM sanpham Where tenhang = '".$tenhang."'';   
                                         $categoryList = executeResult($sql);
                                         foreach ($categoryList  as $item)
                                         {
                                             echo '<tr>
                                                         <td> 
-                                                            <form method="post">
+                                                            <form method="post" action "handleDeletePro.php">
                                                                 <input value="'.$item->id.'" type="hidden" name="id" id="id">
                                                                 <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">    
                                                                 <a class="btn btn-primary" href="update_product.php?id='.$item->id.'&tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   

@@ -115,7 +115,7 @@
                                 
                                 &emsp; &emsp;
                                 
-                                <a href="add_category.php" class="btn btn-primary"> Thêm hãng </a>
+                                <a href="addCategory.php" class="btn btn-primary"> Thêm hãng </a>
                             </div>
                             
                             <div class="card-body">
@@ -140,9 +140,9 @@
                                                         <td>'.$item->tenhang.'</td>
                                                         <td> <img src='.$item->logo.' height="100" width-max="100" alt="Khong tai duoc"> </td>   
                                                         <td> 
-                                                            <form method="post" action ="delete_category.php">
+                                                            <form method="post" action ="handleDeleteCat.php">
                                                             <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">
-                                                            <a class="btn btn-primary" href="update_category.php?tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
+                                                            <a class="btn btn-primary" href="updateCategory.php?tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
                                                             <button class="btn btn-primary" name="xoa" id="xoa"> Xóa </button>
                                                             </form>
                                                         </td> 
