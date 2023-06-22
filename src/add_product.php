@@ -218,9 +218,9 @@
                                                         <input class="form-control py-4" id="hopso" name="hopso" type="text"/>
                                                     </div>
                                                 </div> 
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="small mb-1"> noidung </label>
+                                                        <label class="small mb-1"> Nội dung </label>
                                                         <input class="form-control py-4" id="noidung" name="noidung" type="text"/>
                                                     </div>
                                                 </div> 
