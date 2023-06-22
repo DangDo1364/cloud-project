@@ -1,4 +1,5 @@
 
+
 <?php 
     ob_start();
 
@@ -10,8 +11,17 @@
     {
         header('Location: login.php');    
     }
-?>
 
+if(!empty($_POST))
+{
+    $id = $_POST['id'];
+
+    //$sql = 'delete from donhang where id = "'.$id.'"';
+    //execute($sql);
+    //header('Location: donhang.php');
+    //die();
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -61,7 +71,7 @@
                     <div class="sb-sidenav-menu">
                          <div class="nav">
                             <div class="sb-sidenav-menu-heading"> DANH MỤC </div>
-                            <a class="nav-link collapsed" href="product.php" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="product.jsp" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-motorcycle"></i></div>
                                 SẢN PHẨM
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -75,7 +85,7 @@
                                         $index = 1;
                                         foreach ($categoryList as $item)
                                         {
-                                            echo '<a class="nav-link" href="product.php?tenhang='.$item->tenhang.'">'.$item->tenhang.'</a>';                                            
+                                            echo '<a class="nav-link" href="product.php?tenhang='.$item['tenhang'].'">'.$item['tenhang'].'</a>';                                            
                                         }
                                 ?>       
                                 </nav>
@@ -110,22 +120,21 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4"> SẢN PHẨM <?php $tenhang = $_GET['tenhang']; echo ''.$tenhang.'';?> 
+                        <h1 class="mt-4"> ĐƠN HÀNG
                         </h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="admin.php"> DANH MỤC </a></li>
                             <li class="breadcrumb-item active"> 
-                                SẢN PHẨM <?php $tenhang = $_GET['tenhang']; echo ''.$tenhang.'';?>            
+                                QUẢN LÝ ĐƠN HÀNG          
                             </li>
                         </ol>  
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-motorcycle"></i>
-                                Dữ liệu sản phẩm 
+                                Dữ liệu đơn hàng
         
                                 &emsp; &emsp;
                                 
-                                <a href="add_product.php" class="btn btn-primary"> Thêm sản phẩm </a>
                             </div>
                  
                             <div class="card-body">
@@ -133,56 +142,41 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
+                                                <th> ID </th>
+                                                <th> Tên sản phẩm </th>
+                                                <th> Số lượng đặt </th>
+                                                <th> Tên khách hàng </th>
+                                                <th> Số điện thoại </th>
+                                                <th> Email </th>
+                                                <th> Địa chỉ </th>
+                                                <th> Ghi chú </th>
                                                 <th> Chức năng </th>
-                                                <th> ID</th>
-                                                <th> Hình ảnh</th>
-                                                <th> Tên sản phẩm</th>
-                                                <th> Giá $</th>                         
-                                                <th> Dài Rộng Cao</th>
-                                                <th> Chiều cao yên </th>
-                                                <th> Vỏ trước/sau</th>
-                                                <th> Động cơ</th>
-                                                <th> Dung tích xi lanh</th>
-                                                <th> Công suất</th>
-                                                <th> Dung tích nhớt</th>
-                                                <th> Dung tích xăng</th>
-                                                <th> Thắng trước/sau</th>
-                                                <th> Hộp số</th>
                                             </tr>
                                         </thead>
                                         
                                         <tbody>
-                                        <?php
-                                        $tenhang = $_GET['tenhang'];
+                                        <?php                                                                                                               
                                         // lấy dữ liệu hãng ra
-                                        $sql = "SELECT * FROM sanpham Where tenhang = '".$tenhang."'";   
+                                        $sql = "select * from donhang";   
                                         $categoryList = executeResult($sql);
                                         foreach ($categoryList as $item)
                                         {
                                             echo '<tr>
+                                                        <td>'.$item['id'].'</td>
+                                                        <td>'.$item['tensp'].'</td>  
+                                                        <td>'.$item['soluongdat'].'</td>  
+                                                        <td>'.$item['tenkh'].'</td>
+                                                        <td>'.$item['sdt'].'</td>
+                                                        <td>'.$item['email'].'</td>  
+                                                        <td>'.$item['diachi'].'</td>  
+                                                        <td>'.$item['ghichu'].'</td>                                                            
                                                         <td> 
-                                                            <form method="post" action "handleDeletePro.php">
-                                                                <input value="'.$item->id.'" type="hidden" name="id" id="id">
-                                                                <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">    
-                                                                <a class="btn btn-primary" href="update_product.php?id='.$item->id.'&tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
-                                                                <button class="btn btn-primary"> Xóa </button>
+                                                            <form method="post">
+                                                            <input value="'.$item['id'].'" type="hidden" name="id" id="id">
+                                                            <button class="btn btn-primary" name="xoa" id="xoa"> Xóa </button>
                                                             </form>
                                                         </td> 
-                                                        <td>'.$item->id.'</td>
-                                                        <td> <img src='.$item->hinhanh.' height="100" width-max="100" alt="Khong tai duoc"> </td>
-                                                        <td>'.$item->tensp.'</td>
-                                                        <td>'.$item->gia.'</td>
-                                                        <td>'.$item->kichthuoc.'</td>
-                                                        <td>'.$item->chieucaoyen.'</td>  
-                                                        <td>'.$item->sizebanh.'</td>  
-                                                        <td>'.$item->engine.'</td> 
-                                                        <td>'.$item->CC.'</td>  
-                                                        <td>'.$item->congsuat.'</td> 
-                                                        <td>'.$item->CCnhot.'</td>  
-                                                        <td>'.$item->CCxang.'</td> 
-                                                        <td>'.$item->phanh.'</td>  
-                                                        <td>'.$item->gear.'</td> 
-                                                  </tr>'; 
+                                                  </tr>';  
                                         }
                                         ?>
                                         </tbody>
