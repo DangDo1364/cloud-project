@@ -8,7 +8,7 @@ class ExampleTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$conn = new mysqli("beliy-db.mysql.database.azure.com", "dangdo", 
+        self::$conn = new mysqli("cloud-db-server.mysql.database.azure.com", "dangdo", 
         "01259977014Do@", "banxe");
         
         if (self::$conn->connect_error) {
@@ -26,7 +26,7 @@ class ExampleTest extends TestCase
         $this->assertTrue($result, 'Failed to insert data into the database.');
 
         // Test retrieving the inserted data
-        $sql = "SELECT * FROM taikhoan WHERE username = 'dangdo1'";
+        $sql = "SELECT * FROM taikhoan WHERE username = 'admin'";
 
         $result = self::$conn->query($sql);
 

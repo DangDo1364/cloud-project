@@ -125,7 +125,7 @@
         
                                 &emsp; &emsp;
                                 
-                                <a href="add_product.php" class="btn btn-primary"> Thêm sản phẩm </a>
+                                <a href="addProduct.php" class="btn btn-primary"> Thêm sản phẩm </a>
                             </div>
                  
                             <div class="card-body">
@@ -164,7 +164,7 @@
                                                             <form method="post" action "handleDeletePro.php">
                                                                 <input value="'.$item->id.'" type="hidden" name="id" id="id">
                                                                 <input value="'.$item->tenhang.'" type="hidden" name="tenhang" id="tenhang">    
-                                                                <a class="btn btn-primary" href="update_product.php?id='.$item->id.'&tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
+                                                                <a class="btn btn-primary" href="updateProduct.php?id='.$item->id.'&tenhang='.$item->tenhang.'"> Sửa </a> &emsp;   
                                                                 <button class="btn btn-primary"> Xóa </button>
                                                             </form>
                                                         </td> 
